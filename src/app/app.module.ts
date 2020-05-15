@@ -6,12 +6,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material/angular-material.module';
 import { StoryComponent } from './story/story.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HeadlinesComponent } from './headlines/headlines.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    StoryComponent
+    StoryComponent,
+    HeadlinesComponent
   ],
   imports: [
     BrowserModule,
