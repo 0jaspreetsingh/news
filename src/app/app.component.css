@@ -5,3 +5,8 @@
   .example-spacer {
     flex: 1 1 auto;
   }
+
+  .image-size {
+    padding-right: 5px;
+    width: 45px;
+  }

@@ -2,18 +2,22 @@ import { IpInfoService } from './shared/service/ipInfo/ip-info.service';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'ne-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+	selector: 'ne-root',
+	templateUrl: './app.component.html',
+	styleUrls: [ './app.component.css' ]
 })
 export class AppComponent {
-  title = 'news';
+	title = 'news';
 
-  constructor(private ipInfoService:IpInfoService) { }
+	selectedRegion: any;
 
-  ngOnInit(): void {
-    this.ipInfoService.getIpInfo().subscribe(data=>{
-      console.log(data);
-    });
-  }
+	constructor(private ipInfoService: IpInfoService) {}
+
+	ngOnInit(): void {
+		this.ipInfoService.getIpInfo().subscribe((data) => {
+      this.selectedRegion = data;
+      this.ipInfoService.setIpinfoSubject(data);
+			console.log(data);
+		});
+	}
 }
