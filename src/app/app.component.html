@@ -1,10 +1,42 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span>News</span>
+      <img class="image-size" src="../assets/svgs/interface.svg" alt="" srcset="">
+    <span>Anywhere</span>
       <span class="example-spacer"></span>
-    <!-- <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">verified_user</mat-icon> -->
+    <!-- <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon" [matMenuTriggerFor]="animals">verified_user</mat-icon> -->
+   
+    <span>{{selectedRegion?.country}}</span>
+            <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon" [matMenuTriggerFor]="animals"> 
+                <mat-icon>menu</mat-icon>
+              </button>
+        
+<mat-menu #animals="matMenu">
+  <button mat-menu-item>India</button>
+  <button mat-menu-item>USA</button>
+</mat-menu>
   </mat-toolbar-row>
 </mat-toolbar>
 <ne-headlines></ne-headlines>
 <ne-story></ne-story>
-<button type="button" class="btn btn-primary">Primary</button>
+<section>
+    <div class="example-label">Icon</div>
+    <div class="example-button-row">
+      <div class="example-flex-container">
+        <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+          <mat-icon>home</mat-icon>
+        </button>
+        <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+          <mat-icon>favorite</mat-icon>
+        </button>
+        <button mat-icon-button disabled aria-label="Example icon button with a open in new tab icon">
+          <mat-icon>open_in_new</mat-icon>
+        </button>
+      </div>
+    </div>
+  </section>

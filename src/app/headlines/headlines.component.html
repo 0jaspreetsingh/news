@@ -1,17 +1,18 @@
-<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" *ngIf="headlines">
     <ol class="carousel-indicators">
-        <!-- <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li> -->
         <li data-target="#carouselExampleCaptions" *ngFor="let headline of headlines; let i =index"
             [ngClass]="i == 0 ? 'active' : ''" [attr.data-slide-to]="i"></li>
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item cover-image" *ngFor="let headline of headlines; let i =index"
             [ngClass]="i == 0 ? 'item active' : 'item'">
-            <img [src]=headline.urlToImage class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Third slide label</h5>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            <img *ngIf="headline.urlToImage" [src]=headline.urlToImage class="d-block w-100" alt="https://www.google.com/search?q=loading&tbm=isch&ved=2ahUKEwjV287ev7bpAhXclUsFHc5WBNkQ2-cCegQIABAA&oq=loading&gs_lcp=CgNpbWcQAzIECAAQQzIECAAQQzIECAAQQzIECAAQQzIECAAQQzIECAAQQzIECAAQQzIECAAQQzICCAAyAggAUK-IAVjljgFg7JABaABwAHgAgAHsAogBuAuSAQcwLjUuMS4xmAEAoAEBqgELZ3dzLXdpei1pbWc&sclient=img&ei=Xt--XtW0DtyrrtoPzq2RyA0&bih=763&biw=1536&rlz=1C1GCEU_enIN831IN831#imgrc=oozaH6N0jPRWEM">
+            <div class="carousel-caption d-none d-md-block on-hover" (click)="goToFullStory(headline.url)">
+                <h5 *ngIf="headline.title"><span class="tint">{{headline.title}}</span></h5>
+                <p *ngIf="headline.description"><span class="tint">{{headline.description}}</span></p>
+                <p *ngIf="headline.content"><span class="tint">{{headline.content}}</span></p>
+                <p *ngIf="headline.author"><span class="tint">by -{{headline.author}}</span></p>
+
             </div>
         </div>
     </div>

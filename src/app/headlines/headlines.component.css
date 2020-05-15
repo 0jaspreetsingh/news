@@ -1,5 +1,15 @@
 .cover-image {
 	object-fit: cover;
-	height: 450px;
+	height: 500px;
 	width: 100%;
+}
+
+
+.tint{
+    background-color:darkcyan;
+    /* opacity: 0.5; */
+}
+
+.on-hover {
+    cursor: pointer;
 }
