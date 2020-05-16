@@ -16,7 +16,7 @@ export class AppComponent {
 	ngOnInit(): void {
 		this.ipInfoService.getIpInfo().subscribe((data) => {
       this.selectedRegion = data;
-      this.ipInfoService.setIpinfoSubject(data);
+      // this.ipInfoService.setIpinfoSubject(data);
 			console.log(data);
 		});
 	}
