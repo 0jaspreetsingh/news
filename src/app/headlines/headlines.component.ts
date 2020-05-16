@@ -16,7 +16,7 @@ export class HeadlinesComponent implements OnInit {
 		this.ipInfoService.getRegion().subscribe((region) => {
 			// console.log(ipInfo);
 			if (region) {
-				this.storyService.getHeadlinesByCountry(region).subscribe((data) => {
+				this.storyService.getHeadlines(region, undefined, 5, undefined).subscribe((data) => {
 					console.log(data);
 					this.headlines = data.articles;
 				});
