@@ -13,10 +13,10 @@ export class HeadlinesComponent implements OnInit {
 	constructor(private storyService: StoryService, private ipInfoService: IpInfoService) {}
 
 	ngOnInit(): void {
-		this.ipInfoService.getipInfoSubject().subscribe((ipInfo) => {
-			console.log(ipInfo);
-			if (ipInfo && ipInfo.countryCode) {
-				this.storyService.getHeadlinesByCountry(ipInfo.countryCode).subscribe((data) => {
+		this.ipInfoService.getRegion().subscribe((region) => {
+			// console.log(ipInfo);
+			if (region) {
+				this.storyService.getHeadlinesByCountry(region).subscribe((data) => {
 					console.log(data);
 					this.headlines = data.articles;
 				});
