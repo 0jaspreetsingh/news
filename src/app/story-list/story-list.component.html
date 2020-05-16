@@ -1,0 +1,18 @@
+<mat-chip-list class="category-center m-2" aria-label="Fish selection">
+    <mat-chip color="accent" [selected]="category ==''" (click)="category ='' ">All</mat-chip>
+    <mat-chip color="accent" [selected]="category =='business'" (click)="category ='business' ">Business</mat-chip>
+    <mat-chip color="accent" [selected]="category =='entertainment'" (click)="category ='entertainment'">Entertainment
+    </mat-chip>
+    <mat-chip color="accent" [selected]="category =='general'" (click)="category ='general' ">General</mat-chip>
+    <mat-chip color="accent" [selected]="category =='health'" (click)="category ='health' ">Health</mat-chip>
+    <mat-chip color="accent" [selected]="category =='science'" (click)="category ='science' ">Science</mat-chip>
+    <mat-chip color="accent" [selected]="category =='sports'" (click)="category ='sports' ">Sports</mat-chip>
+    <mat-chip color="accent" [selected]="category =='technology'" (click)="category ='technology' ">Technology
+    </mat-chip>
+
+</mat-chip-list>
+<mat-grid-list cols="1" rowHeight="2:1">
+    <mat-grid-tile *ngFor="let story of stories">
+        <ne-story [story]=story></ne-story>
+    </mat-grid-tile>
+</mat-grid-list>

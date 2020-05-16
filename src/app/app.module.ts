@@ -7,13 +7,15 @@ import { AngularMaterialModule } from './angular-material/angular-material.modul
 import { StoryComponent } from './story/story.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeadlinesComponent } from './headlines/headlines.component';
+import { StoryListComponent } from './story-list/story-list.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     StoryComponent,
-    HeadlinesComponent
+    HeadlinesComponent,
+    StoryListComponent
   ],
   imports: [
     BrowserModule,
