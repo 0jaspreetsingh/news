@@ -13,13 +13,15 @@ export class IpInfoService {
 
 	ipInfo: BehaviorSubject<any> = new BehaviorSubject<any>(undefined);
 
+	region: BehaviorSubject<string> = new BehaviorSubject<string>('us');
+
 	constructor(private http: HttpClient) {}
 
 	getIpInfo(): Observable<any> {
 		return this.http.get(this.apiUrl).pipe(
 			map((info) => {
-        this.ipInfo.next(info);
-        return info;
+				this.ipInfo.next(info);
+				return info;
 			})
 		);
 	}
@@ -30,5 +32,13 @@ export class IpInfoService {
 
 	setIpinfoSubject(data: any) {
 		this.ipInfo.next(data);
+	}
+
+	getRegion(): Observable<string> {
+		return this.region.asObservable();
+	}
+
+	setRegion(data: string) {
+		this.region.next(data);
 	}
 }

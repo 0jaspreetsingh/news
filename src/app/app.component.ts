@@ -1,7 +1,7 @@
 import { CountryCodes } from './../assets/available-country-codes';
 import { IpInfoService } from './shared/service/ipInfo/ip-info.service';
 import { Component } from '@angular/core';
-import { findFlagUrlByIso2Code } from "country-flags-svg";
+import { findFlagUrlByIso2Code } from 'country-flags-svg';
 import { getCountryName } from 'src/assets/isoCountries';
 
 @Component({
@@ -12,7 +12,7 @@ import { getCountryName } from 'src/assets/isoCountries';
 export class AppComponent {
 	title = 'news';
 
-	selectedRegion = '';
+	selectedRegion = 'us';
 
 	// flagUrl = '';
 
@@ -22,15 +22,19 @@ export class AppComponent {
 
 	ngOnInit(): void {
 		this.ipInfoService.getIpInfo().subscribe((data) => {
-      this.selectedRegion = data.countryCode.toLowerCase();
-      // this.ipInfoService.setIpinfoSubject(data);
-			console.log(data);
+			this.selectedRegion = data.countryCode.toLowerCase();
+			this.ipInfoService.setRegion(data.countryCode);
+			// this.ipInfoService.setIpinfoSubject(data);
+			// console.log(data);
+			// if (data && data.countryCode) {
+			// 	this.ipInfoService.setRegion(data.countryCode);
+			// }
 			//this.flagUrl = findFlagUrlByIso2Code(data.countryCode);
 			// console.log(this.flagUrl);
 		});
 	}
 
-	getCountryName(code:string){
+	getCountryName(code: string) {
 		return getCountryName(code);
 	}
 
@@ -38,8 +42,11 @@ export class AppComponent {
 	// 	return findFlagUrlByIso2Code(code);
 	// }
 
-	changeCountry(code:string){
+	changeCountry(code: string) {
 		// this.ipInfoService.
-console.log(code);
+		console.log(code);
+		this.ipInfoService.setRegion(code);
+		this.selectedRegion = code.toLowerCase();
+
 	}
 }

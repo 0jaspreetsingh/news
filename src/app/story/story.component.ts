@@ -10,8 +10,8 @@ export class StoryComponent implements OnInit {
 	constructor(private storyService: StoryService) {}
 
 	ngOnInit(): void {
-		this.storyService.getHeadlinesByCountry('us').subscribe((data) => {
-			console.log(data);
-		});
+		// this.storyService.getHeadlinesByCountry('us').subscribe((data) => {
+		// 	console.log(data);
+		// });
 	}
 }
