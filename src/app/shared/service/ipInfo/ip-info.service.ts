@@ -16,14 +16,19 @@ export class IpInfoService {
 	constructor(private http: HttpClient) {}
 
 	getIpInfo(): Observable<any> {
-		return this.http.get(this.apiUrl);
+		return this.http.get(this.apiUrl).pipe(
+			map((info) => {
+        this.ipInfo.next(info);
+        return info;
+			})
+		);
 	}
 
 	getipInfoSubject(): Observable<any> {
 		return this.ipInfo.asObservable();
 	}
 
-	setIpinfoSubject(data: any) {
-		this.ipInfo.next(data);
-	}
+	// setIpinfoSubject(data: any) {
+	// 	this.ipInfo.next(data);
+	// }
 }

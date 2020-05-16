@@ -20,8 +20,7 @@ import { HeadlinesComponent } from './headlines/headlines.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
-    HttpClientModule
-  ],
+    HttpClientModule  ],
   providers: [],
   bootstrap: [AppComponent]
 })
