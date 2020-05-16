@@ -28,7 +28,7 @@ export class IpInfoService {
 		return this.ipInfo.asObservable();
 	}
 
-	// setIpinfoSubject(data: any) {
-	// 	this.ipInfo.next(data);
-	// }
+	setIpinfoSubject(data: any) {
+		this.ipInfo.next(data);
+	}
 }
