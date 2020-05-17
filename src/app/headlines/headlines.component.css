@@ -2,16 +2,34 @@
 	object-fit: cover;
 	height: 500px;
 	width: 100%;
+	/* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); */
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	/* url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/cheese-curds.jpg); */
+	background-size: cover;
+	/* height: 100vh; */
 }
 
+.image-tint {
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	/* url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/cheese-curds.jpg); */
+	background-size: cover;
+	height: 100vh;
+}
 
-.tint{
-    background-color:darkcyan;
-    /* opacity: 0.5; */
+.tint {
+	/* background-color:darkcyan; */
+	/* text-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+	/* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); */
+	text-shadow: 0 1px 0 black;
 }
 
 .on-hover {
-    cursor: pointer;
+	cursor: pointer;
 }
 
-
+@media only screen and (max-width: 768px) {
+	/* For mobile phones: */
+	.hide-on-mobile {
+		display: none;
+	}
+}

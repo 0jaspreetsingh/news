@@ -1,16 +1,19 @@
-<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" *ngIf="headlines">
+<div id="carouselExampleCaptions" class="carousel slide mt-5" data-ride="carousel" *ngIf="headlines">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleCaptions" *ngFor="let headline of headlines; let i =index"
             [ngClass]="i == 0 ? 'active' : ''" [attr.data-slide-to]="i"></li>
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item cover-image" *ngFor="let headline of headlines; let i =index"
-            [ngClass]="i == 0 ? 'item active' : 'item'">
-            <img *ngIf="headline.urlToImage" [src]=headline.urlToImage class="d-block w-100" alt="headline.description">
+            [ngClass]="i == 0 ? 'item active' : 'item'" [ngStyle]="{'background': 'linear-gradient(
+                rgba(0, 0, 0, 0.5),
+                rgba(0, 0, 0, 0.5)
+              ),url(' + headline.urlToImage + ')'}">
+            <!-- <img *ngIf="headline.urlToImage" [src]=headline.urlToImage class="d-block w-100" alt="headline.description"> -->
             <div class="carousel-caption text-left on-hover" (click)="goToFullStory(headline.url)">
                 <h1 *ngIf="headline.title"><span class="tint">{{headline.title}}</span></h1>
                 <p *ngIf="headline.description"><span class="tint">{{headline.description}}</span></p>
-                <p *ngIf="headline.content"><span class="tint">{{headline.content}}</span></p>
+                <p *ngIf="headline.content"><span class="tint hide-on-mobile">{{headline.content}}</span></p>
                 <p *ngIf="headline.author"><span class="tint">by -{{headline.author}}</span></p>
 
             </div>
