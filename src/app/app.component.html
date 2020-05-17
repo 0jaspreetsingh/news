@@ -1,4 +1,4 @@
-<mat-toolbar class="position-fixed" color="primary">
+<mat-toolbar class="position-fixed temp-color" color="primary">
   <mat-toolbar-row>
     <img class="image-size" src="../assets/svgs/interface.svg" alt="" srcset="">
     <span>Anywhere</span>
@@ -6,7 +6,7 @@
     <!-- <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon" [matMenuTriggerFor]="animals">verified_user</mat-icon> -->
     <img class="image-size" src="../assets/Country flags/{{selectedRegion}}.svg" alt="" srcset="">
     <span>{{getCountryName(selectedRegion.toUpperCase())}}</span>
-    <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon"
+    <button mat-icon-button color="accent" class="ml-1" aria-label="Example icon button with a menu icon"
       [matMenuTriggerFor]="availableCountries">
       <mat-icon>menu</mat-icon>
     </button>
@@ -19,6 +19,7 @@
   </mat-toolbar-row>
 </mat-toolbar>
 <ne-headlines></ne-headlines>
+<ne-search></ne-search>
 <ne-story-list></ne-story-list>
 <!-- <section>
   <div class="example-label">Icon</div>
@@ -42,3 +43,6 @@
     </div>
   </div>
 </section> -->
+<div class="footer">
+    <p>Footer</p>
+  </div>
