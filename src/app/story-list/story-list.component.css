@@ -1,4 +1,12 @@
-.category-center{
-    display: flex;
-    justify-content: center;
+.category-center {
+	display: flex;
+	justify-content: center;
+}
+
+.cols {
+	display: flex;
+	/* flex: 1; */
+	flex-direction: column;
+	/* justify-content: center; */
+	align-items: center;
 }

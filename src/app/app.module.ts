@@ -8,6 +8,7 @@ import { StoryComponent } from './story/story.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeadlinesComponent } from './headlines/headlines.component';
 import { StoryListComponent } from './story-list/story-list.component';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { StoryListComponent } from './story-list/story-list.component';
     AppComponent,
     StoryComponent,
     HeadlinesComponent,
-    StoryListComponent
+    StoryListComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
