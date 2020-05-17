@@ -1,23 +1,32 @@
 <h1 class="cols m-3">Stories Popular in {{countryName}}</h1>
 <mat-chip-list class="category-center m-2" aria-label="Fish selection">
-    <mat-chip color="accent" [selected]="category ==''" (click)="category ='' ">All</mat-chip>
-    <mat-chip color="accent" [selected]="category =='business'" (click)="category ='business' ">Business</mat-chip>
-    <mat-chip color="accent" [selected]="category =='entertainment'" (click)="category ='entertainment'">Entertainment
+    <mat-chip color="accent" [selected]="category ==''" (click)="updateResultsWithCategory('') ">All</mat-chip>
+    <mat-chip color="accent" [selected]="category =='business'" (click)="updateResultsWithCategory('business') ">
+        Business</mat-chip>
+    <mat-chip color="accent" [selected]="category =='entertainment'"
+        (click)="updateResultsWithCategory('entertainment')">Entertainment
     </mat-chip>
-    <mat-chip color="accent" [selected]="category =='general'" (click)="category ='general' ">General</mat-chip>
-    <mat-chip color="accent" [selected]="category =='health'" (click)="category ='health' ">Health</mat-chip>
-    <mat-chip color="accent" [selected]="category =='science'" (click)="category ='science' ">Science</mat-chip>
-    <mat-chip color="accent" [selected]="category =='sports'" (click)="category ='sports' ">Sports</mat-chip>
-    <mat-chip color="accent" [selected]="category =='technology'" (click)="category ='technology' ">Technology
+    <mat-chip color="accent" [selected]="category =='general'" (click)="updateResultsWithCategory('general') ">General
+    </mat-chip>
+    <mat-chip color="accent" [selected]="category =='health'" (click)="updateResultsWithCategory('health') ">Health
+    </mat-chip>
+    <mat-chip color="accent" [selected]="category =='science'" (click)="updateResultsWithCategory('science') ">Science
+    </mat-chip>
+    <mat-chip color="accent" [selected]="category =='sports'" (click)="updateResultsWithCategory('sports') ">Sports
+    </mat-chip>
+    <mat-chip color="accent" [selected]="category =='technology'" (click)="updateResultsWithCategory('technology') ">
+        Technology
     </mat-chip>
 
 </mat-chip-list>
 <!-- <mat-grid-list cols="1" rowHeight="1:1">
     <mat-grid-tile> -->
 <div class="cols">
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
     <ne-story *ngFor="let story of stories; let i = index" [story]=story [id]='i'></ne-story>
     <mat-paginator *ngIf="totalResults" [length]="totalResults" [pageSize]="pageSize" (page)="onPageChange(  $event)">
     </mat-paginator>
+    <mat-spinner *ngIf="isPaginatedResultsLoading"></mat-spinner>
 </div>
 <!-- </mat-grid-tile>
 </mat-grid-list> -->
