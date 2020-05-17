@@ -9,6 +9,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
 	declarations: [],
@@ -22,7 +23,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 		MatGridListModule,
 		MatChipsModule,
 		MatInputModule,
-		MatPaginatorModule
+		MatPaginatorModule,
+		MatProgressSpinnerModule
 	],
 	exports: [
 		MatToolbarModule,
@@ -33,7 +35,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 		MatGridListModule,
 		MatChipsModule,
 		MatInputModule,
-		MatPaginatorModule
+		MatPaginatorModule,
+		MatProgressSpinnerModule
 	]
 })
 export class AngularMaterialModule {}
