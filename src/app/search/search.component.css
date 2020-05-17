@@ -1,3 +1,9 @@
 .example-full-width {
-    width: 30%;
-  }
+	width: 30%;
+}
+
+.center {
+	display: flex;
+	justify-content: center;
+	margin: 32px;
+}

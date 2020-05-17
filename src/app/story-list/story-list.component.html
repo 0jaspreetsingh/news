@@ -1,4 +1,4 @@
-<h1 class="cols m-3">Stories Popular in India</h1>
+<h1 class="cols m-3">Stories Popular in {{countryName}}</h1>
 <mat-chip-list class="category-center m-2" aria-label="Fish selection">
     <mat-chip color="accent" [selected]="category ==''" (click)="category ='' ">All</mat-chip>
     <mat-chip color="accent" [selected]="category =='business'" (click)="category ='business' ">Business</mat-chip>
@@ -14,9 +14,10 @@
 </mat-chip-list>
 <!-- <mat-grid-list cols="1" rowHeight="1:1">
     <mat-grid-tile> -->
-        <div class="cols">
-                <ne-story  *ngFor="let story of stories" [story]=story></ne-story>
-
-        </div>
-    <!-- </mat-grid-tile>
+<div class="cols">
+    <ne-story *ngFor="let story of stories; let i = index" [story]=story [id]='i'></ne-story>
+    <mat-paginator *ngIf="totalResults" [length]="totalResults" [pageSize]="pageSize" (page)="onPageChange(  $event)">
+    </mat-paginator>
+</div>
+<!-- </mat-grid-tile>
 </mat-grid-list> -->

@@ -247,6 +247,7 @@ var isoCountries = {
 };
 
 export function getCountryName(countryCode) {
+	countryCode = countryCode.toUpperCase();
 	if (isoCountries.hasOwnProperty(countryCode)) {
 		return isoCountries[countryCode];
 	} else {
