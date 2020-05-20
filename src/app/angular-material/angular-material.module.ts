@@ -10,6 +10,8 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
 	declarations: [],
@@ -24,7 +26,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 		MatChipsModule,
 		MatInputModule,
 		MatPaginatorModule,
-		MatProgressSpinnerModule
+		MatProgressSpinnerModule,
+		MatDialogModule,
+		MatFormFieldModule
 	],
 	exports: [
 		MatToolbarModule,
@@ -36,7 +40,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 		MatChipsModule,
 		MatInputModule,
 		MatPaginatorModule,
-		MatProgressSpinnerModule
+		MatProgressSpinnerModule,
+		MatDialogModule,
+		MatFormFieldModule
 	]
 })
 export class AngularMaterialModule {}

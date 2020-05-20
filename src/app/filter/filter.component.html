@@ -1,0 +1,8 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<div class="form" [ngClass]="{'hide': isLoading}" [formGroup]="form">
+    <h1>form</h1>
+    <div mat-dialog-actions>
+        <button mat-button (click)="onNoClick()">Clear</button>
+        <button mat-button [mat-dialog-close]="filterData" cdkFocusInitial>Filter</button>
+    </div>
+</div>

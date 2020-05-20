@@ -9,23 +9,28 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeadlinesComponent } from './headlines/headlines.component';
 import { StoryListComponent } from './story-list/story-list.component';
 import { SearchComponent } from './search/search.component';
-
+import { FilterComponent } from './filter/filter.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    StoryComponent,
-    HeadlinesComponent,
-    StoryListComponent,
-    SearchComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    AngularMaterialModule,
-    HttpClientModule  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		StoryComponent,
+		HeadlinesComponent,
+		StoryListComponent,
+		SearchComponent,
+		FilterComponent
+	],
+	imports: [
+		BrowserModule,
+		FormsModule,
+		ReactiveFormsModule,
+		AppRoutingModule,
+		BrowserAnimationsModule,
+		AngularMaterialModule,
+		HttpClientModule
+	],
+	providers: [],
+	bootstrap: [ AppComponent ]
 })
-export class AppModule { }
+export class AppModule {}
