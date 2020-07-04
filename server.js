@@ -8,7 +8,7 @@ const cors = require('cors');
 const app = express();
 
 // add this code
-const whitelist = ['https://newsapi.org']; // list of allow domain
+const whitelist = ['https://newsapi.org/v2/','http://ip-api.com/json','http://localhost:4201','http://news-anywhere.herokuapp.com/']; // list of allow domain
 
 const corsOptions = {
     origin: function (origin, callback) {
@@ -17,6 +17,9 @@ const corsOptions = {
         }
 
         if (whitelist.indexOf(origin) === -1) {
+            console.log('************');
+            console.log(origin);
+            console.log('************');
             var msg = 'The CORS policy for this site does not ' +
                 'allow access from the specified Origin.';
             return callback(new Error(msg), false);
