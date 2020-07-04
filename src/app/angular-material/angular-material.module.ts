@@ -10,6 +10,13 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
 	declarations: [],
@@ -24,7 +31,14 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 		MatChipsModule,
 		MatInputModule,
 		MatPaginatorModule,
-		MatProgressSpinnerModule
+		MatProgressSpinnerModule,
+		MatDialogModule,
+		MatFormFieldModule,
+		MatSidenavModule,
+		MatListModule,
+		MatExpansionModule,
+		MatDatepickerModule,
+		MatNativeDateModule
 	],
 	exports: [
 		MatToolbarModule,
@@ -36,7 +50,14 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 		MatChipsModule,
 		MatInputModule,
 		MatPaginatorModule,
-		MatProgressSpinnerModule
+		MatProgressSpinnerModule,
+		MatDialogModule,
+		MatFormFieldModule,
+		MatSidenavModule,
+		MatListModule,
+		MatExpansionModule,
+		MatDatepickerModule,
+		MatNativeDateModule
 	]
 })
 export class AngularMaterialModule {}

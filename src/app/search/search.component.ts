@@ -1,4 +1,6 @@
+import { FilterComponent } from './../filter/filter.component';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'ne-search',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) {}
 
-  ngOnInit(): void {
+  ngOnInit(){
+   //this.openDialog();
   }
 
+  openDialog() {
+    const dialogRef = this.dialog.open(FilterComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+    });
+  }
 }
+
+
