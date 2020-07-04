@@ -16,6 +16,29 @@ export class FilterComponent implements OnInit {
 
 	sources: any;
 
+	//typesOfShoes: string[] = ['Boots', 'Clogs', 'Loafers', 'Moccasins', 'Sneakers'];
+
+	// options = {
+	// 	value: {
+	// 		bottom: 0,
+	// 		fixed: false,
+	// 		top: 0
+	// 	}
+	// };
+	step = 0;
+
+	setStep(index: number) {
+		this.step = index;
+	}
+
+	nextStep() {
+		this.step++;
+	}
+
+	prevStep() {
+		this.step--;
+	}
+
 	form: FormGroup;
 
 	constructor(
