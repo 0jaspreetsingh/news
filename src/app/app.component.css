@@ -1,3 +1,7 @@
+.darkMode{
+  background-color: black;
+}
+
 .example-icon {
 	padding: 0 14px;
 }
@@ -20,9 +24,8 @@
 	z-index: 100;
 }
 
-.temp-color {
-  background-color: white;
-  color: black;
+.shadow {
+
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 

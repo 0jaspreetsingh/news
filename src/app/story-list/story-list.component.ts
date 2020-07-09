@@ -83,4 +83,8 @@ export class StoryListComponent implements OnInit {
 				});
 		});
 	}
+
+	isDarkThemeEnabled(){
+		return true;
+	}
 }

@@ -1,4 +1,4 @@
-<h1 class="cols m-3">Stories Popular in {{countryName}}</h1>
+<h1 class="cols m-3" [ngClass]="{'white': isDarkThemeEnabled()}">Stories Popular in {{countryName}}</h1>
 <mat-chip-list class="category-center m-2" aria-label="Fish selection">
     <mat-chip color="accent" [selected]="category ==''" (click)="updateResultsWithCategory('') ">All</mat-chip>
     <mat-chip color="accent" [selected]="category =='business'" (click)="updateResultsWithCategory('business') ">

@@ -1,27 +1,38 @@
-<mat-toolbar class="position-fixed temp-color" color="primary">
-  <mat-toolbar-row>
-    <img class="image-size" src="../assets/svgs/interface.svg" alt="" srcset="">
-    <span>Anywhere</span>
-    <span class="example-spacer"></span>
-    <!-- <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon" [matMenuTriggerFor]="animals">verified_user</mat-icon> -->
-    <img class="image-size" src="../assets/Country flags/{{selectedRegion}}.svg" alt="" srcset="">
-    <span>{{getCountryName(selectedRegion.toUpperCase())}}</span>
-    <button mat-icon-button color="accent" class="ml-1" aria-label="Example icon button with a menu icon"
-      [matMenuTriggerFor]="availableCountries">
-      <mat-icon>filter_list</mat-icon>
-    </button>
+<div [class.dark]=darkMode>
+  <mat-toolbar class="position-fixed shadow">
+    <mat-toolbar-row>
+      <img class="image-size" src="../assets/svgs/interface.svg" alt="" srcset="">
+      <span>Anywhere</span>
+      <span class="example-spacer"></span>
+      <!-- <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon" [matMenuTriggerFor]="animals">verified_user</mat-icon> -->
+      <img class="image-size" src="../assets/Country flags/{{selectedRegion}}.svg" alt="" srcset="">
+      <span>{{getCountryName(selectedRegion.toUpperCase())}}</span>
+      <button mat-icon-button color="accent" class="ml-1" aria-label="Example icon button with a menu icon"
+        [matMenuTriggerFor]="availableCountries">
+        <mat-icon>filter_list</mat-icon>
+      </button>
 
-    <mat-menu #availableCountries="matMenu">
+      <mat-slide-toggle [(ngModel)]="darkMode">
+        <ng-container *ngIf="!darkMode">
+          <mat-icon>wb_sunny</mat-icon>
+        </ng-container>
+        <ng-container *ngIf="darkMode">
+          <mat-icon>nights_stay</mat-icon>
+        </ng-container>
 
-      <button mat-menu-item *ngFor="let code of CountryCodes" (click)="changeCountry(code)"><img class="image-size"
-          src="../assets/Country flags/{{code}}.svg" alt="" srcset="">{{getCountryName(code.toUpperCase())}}</button>
-    </mat-menu>
-  </mat-toolbar-row>
-</mat-toolbar>
-<ne-headlines></ne-headlines>
-<ne-search></ne-search>
-<ne-story-list></ne-story-list>
-<!-- <section>
+      </mat-slide-toggle>
+
+      <mat-menu #availableCountries="matMenu">
+
+        <button mat-menu-item *ngFor="let code of CountryCodes" (click)="changeCountry(code)"><img class="image-size"
+            src="../assets/Country flags/{{code}}.svg" alt="" srcset="">{{getCountryName(code.toUpperCase())}}</button>
+      </mat-menu>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <ne-headlines></ne-headlines>
+  <ne-search></ne-search>
+  <ne-story-list></ne-story-list>
+  <!-- <section>
   <div class="example-label">Icon</div>
   <div class="example-button-row">
     <div class="example-flex-container">
@@ -43,6 +54,7 @@
     </div>
   </div>
 </section> -->
-<div class="footer">
+  <div class="footer">
     <p>Footer</p>
   </div>
+</div>

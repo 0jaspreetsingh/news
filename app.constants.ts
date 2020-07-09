@@ -1,6 +1,6 @@
 export const config = {
-	// newsApiUrl: 'https://newsapi.org/v2/',
-	newsApiUrl: '/top-headlines',
+	 newsApiUrl: 'https://newsapi.org/v2/',
+	//newsApiUrl: '/top-headlines',
 	topheadlines: '/top-headlines',
 	everything: '/everything',
 	sources: '/sources',

@@ -14,6 +14,8 @@ export class AppComponent {
 
 	selectedRegion = 'us';
 
+	darkMode = false;
+
 	// flagUrl = '';
 
 	CountryCodes = CountryCodes;
