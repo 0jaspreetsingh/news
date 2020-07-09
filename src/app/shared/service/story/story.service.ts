@@ -37,7 +37,7 @@ export class StoryService {
 		searchQuery = category ? searchQuery + '&category=' + category : searchQuery;
 		searchQuery = pageSize ? searchQuery + '&pageSize=' + pageSize : searchQuery;
 		searchQuery = page ? searchQuery + '&page=' + page : searchQuery;
-		return this.http.get(`${this.apiUrl}top-headlines?country=${country}${searchQuery}`, {
+		return this.http.get(`${config.topheadlines}?country=${country}${searchQuery}`, {
 			headers: this.httpHeader
 		});
 	}
@@ -78,7 +78,7 @@ export class StoryService {
 		searchQuery = pageSize ? searchQuery + '&pageSize=' + pageSize : searchQuery;
 		searchQuery = page ? searchQuery + '&page=' + page : searchQuery;
 
-		return this.http.get(`${this.apiUrl}everything?q=${query}${searchQuery}`, {
+		return this.http.get(`${config.everything}?q=${query}${searchQuery}`, {
 			headers: this.httpHeader
 		});
 	}
@@ -87,7 +87,7 @@ export class StoryService {
 		searchQuery = category ? searchQuery + '&category=' + category : searchQuery;
 		searchQuery = language ? searchQuery + '&language=' + language : searchQuery;
 		searchQuery = country ? searchQuery + '&country=' + country : searchQuery;
-		return this.http.get(`${this.apiUrl}sources${searchQuery}`, {
+		return this.http.get(`${config.sources}${searchQuery}`, {
 			headers: this.httpHeader
 		});
 	}
