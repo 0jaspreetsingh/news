@@ -53,10 +53,10 @@ export class AppComponent {
 	}
 
 	listenThemeChange() {
-		if (window.matchMedia && window.matchMedia('prefers-color-scheme: dark').matches) {
+		if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
 			this.darkMode = true;
 		}
-		window.matchMedia('prefers-color-scheme: dark').addEventListener('change', (e) => {
+		window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
 			this.darkMode = e.matches;
 		});
 	}
