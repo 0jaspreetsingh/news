@@ -56,7 +56,7 @@ export class AppComponent {
 		if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
 			this.darkMode = true;
 		}
-		window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+		window.matchMedia('(prefers-color-scheme: dark)').addListener( (e) => {
 			this.darkMode = e.matches;
 		});
 	}
