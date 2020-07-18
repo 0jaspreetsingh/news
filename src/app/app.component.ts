@@ -34,6 +34,7 @@ export class AppComponent {
 			//this.flagUrl = findFlagUrlByIso2Code(data.countryCode);
 			// console.log(this.flagUrl);
 		});
+		this.listenThemeChange();
 	}
 
 	getCountryName(code: string) {
@@ -49,6 +50,14 @@ export class AppComponent {
 		console.log(code);
 		this.ipInfoService.setRegion(code);
 		this.selectedRegion = code.toLowerCase();
+	}
 
+	listenThemeChange() {
+		if (window.matchMedia && window.matchMedia('prefers-color-scheme: dark').matches) {
+			this.darkMode = true;
+		}
+		window.matchMedia('prefers-color-scheme: dark').addEventListener('change', (e) => {
+			this.darkMode = e.matches;
+		});
 	}
 }
